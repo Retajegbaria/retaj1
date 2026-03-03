@@ -538,9 +538,76 @@
       color: white;
     }
 
+    .about-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 24px;
+      padding: 2rem 2.25rem;
+      margin-top: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.06);
+    }
+
+    .about-card h3 {
+      font-size: 1.15rem;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .about-card p {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.75;
+      text-align: center;
+      text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+      margin-bottom: 1.25rem;
+    }
+
+    .about-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .about-hours {
+      font-size: 0.9rem;
+      color: var(--primary-dark);
+      font-weight: 500;
+    }
+
+    .waze-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      background: #33CCFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(51, 204, 255, 0.3);
+    }
+
+    .waze-link:hover {
+      background: #2ab8e6;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(51, 204, 255, 0.4);
+    }
+
+    .waze-link svg {
+      width: 22px;
+      height: 22px;
+    }
+
     .footer {
       text-align: center;
-      margin-top: 2.5rem;
+      margin-top: 2rem;
       font-size: 0.9rem;
       color: var(--text-light);
       opacity: 0.9;
@@ -958,6 +1025,18 @@
 
         <button type="submit" class="btn-submit">إرسال الاستمارة على الواتساب</button>
       </form>
+    </div>
+
+    <div class="about-card">
+      <h3>من نحن</h3>
+      <p>Retaj Cosmetica – عيادة علاجات بشرة متطورة نقدّم لكم خدمات متنوعة مثل الهايدروفيشل، الميزوثيرابي، التقشير الأخضر والبارد، وتقشير الطحالب. نستخدم منتجات ومعدات حديثة ونراعي احتياج كل بشرة. للاستفسار أو الحجز تواصلي معنا على الواتساب أو الانستغرام.</p>
+      <div class="about-info">
+        <span class="about-hours">ساعات العمل: من 9 صباحاً إلى 4 عصراً</span>
+        <a href="https://waze.com/ul?a=share_drive&locale=ar&sd=9Cmm4fR6aNaUZLtnfw-sd&env=il&utm_source=waze_app&utm_campaign=share_drive" class="waze-link" target="_blank" rel="noopener" aria-label="العنوان على ويز">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          العنوان على ويز
+        </a>
+      </div>
     </div>
 
     <p class="footer">Retaj Cosmetica</p>
