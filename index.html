@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>استمارة تقييم البشرة - Retaj Cosmetica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;600;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #c4a574;
+      --primary-dark: #9a7b4a;
+      --primary-light: #e8ddcc;
+      --accent: #faf7f2;
+      --bg: #faf8f5;
+      --text: #2d2926;
+      --text-light: #6b6560;
+      --border: rgba(154, 123, 74, 0.15);
+      --white: #ffffff;
+      --glass: rgba(255, 255, 255, 0.25);
+      --glass-border: rgba(255, 255, 255, 0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cairo', 'Amiri', sans-serif;
+      background: var(--bg);
+      background-image: 
+        linear-gradient(180deg, rgba(253, 251, 247, 0.2) 0%, rgba(250, 247, 242, 0.35) 50%, rgba(248, 245, 238, 0.3) 100%),
+        url("WhatsApp Image 2026-03-03 at 22.42.01.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      padding: 2.5rem 1.5rem;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 560px;
+      margin: 0 auto;
+      animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(24px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .header {
+      animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .header-brand {
+      text-align: center;
+    }
+
+    .header-brand::before {
+      content: '✦';
+      display: block;
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.4em;
+      opacity: 0.9;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.9; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+
+    .brand {
+      font-family: 'Amiri', 'Cairo', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 8px rgba(255,255,255,0.9);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .form-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 28px;
+      box-shadow: 
+        0 16px 40px -12px rgba(0, 0, 0, 0.06),
+        0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+      padding: 2.75rem 2.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: cardFloat 8s ease-in-out infinite;
+    }
+
+    .form-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 
+        0 32px 64px -16px rgba(154, 123, 74, 0.12),
+        0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+      animation: none;
+      transform: translateY(-4px);
+    }
+
+    @keyframes cardFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid rgba(196, 165, 116, 0.35);
+      letter-spacing: 0.02em;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+    }
+
+    .treatment-hint {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 0.75rem;
+      opacity: 0.95;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(196, 165, 116, 0.2), transparent);
+      margin: 2rem 0;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.1rem;
+    }
+
+    .form-group {
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .form-group.full {
+      flex: 1 1 100%;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    label .required {
+      color: #c46b6b;
+      margin-right: 2px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 0.8rem 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 14px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(4px);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(107, 101, 96, 0.6);
+    }
+
+    input:hover,
+    textarea:hover {
+      background: rgba(255, 255, 255, 0.65);
+      border-color: rgba(255, 255, 255, 0.65);
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(196, 165, 116, 0.2);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .chip-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .chip:hover {
+      border-color: rgba(196, 165, 116, 0.5);
+      background: rgba(255, 255, 255, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .chip input {
+      display: none;
+    }
+
+    .chip input:checked + .chip-label {
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    .chip:has(input:checked) {
+      border-color: var(--primary);
+      background: rgba(232, 221, 204, 0.45);
+      box-shadow: 0 0 0 2px rgba(196, 165, 116, 0.25);
+    }
+
+    .radio-chip {
+      padding: 0.5rem 1.1rem;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 1.15rem 2rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      border: none;
+      border-radius: 16px;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 2rem;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 20px rgba(154, 123, 74, 0.25);
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(154, 123, 74, 0.35);
+    }
+
+    .btn-submit:active {
+      transform: translateY(-2px);
+    }
+
+    .btn-submit.loading {
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    .btn-submit.loading::after {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .signature-row {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .signature-group {
+      flex: 1;
+      min-width: 160px;
+    }
+
+    .success-msg {
+      display: none;
+      background: rgba(200, 230, 201, 0.9);
+      backdrop-filter: blur(8px);
+      color: #1b5e20;
+      padding: 1.1rem 1.5rem;
+      border-radius: 16px;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      border: 1px solid rgba(27, 94, 32, 0.2);
+      animation: slideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .success-msg.show {
+      display: block;
+    }
+
+    .treatment-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+      margin-top: 0.85rem;
+    }
+
+    .treatment-card {
+      position: relative;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+
+    .treatment-card:hover {
+      border-color: rgba(196, 165, 116, 0.5);
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateX(-6px);
+      box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.08);
+    }
+
+    .treatment-card.selected {
+      border-color: var(--primary);
+      background: rgba(232, 221, 204, 0.35);
+      box-shadow: 0 0 0 2px rgba(196, 165, 116, 0.3);
+    }
+
+    .treatment-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+      padding: 1.1rem 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .treatment-select {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex: 1;
+      min-width: 0;
+      cursor: pointer;
+    }
+
+    .treatment-select input {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--primary);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .treatment-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex: 1;
+      min-width: 0;
+      gap: 0.5rem;
+    }
+
+    .treatment-name {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.95rem;
+      text-shadow: 0 1px 1px rgba(255,255,255,0.6);
+    }
+
+    .treatment-card.selected .treatment-name {
+      color: var(--primary-dark);
+    }
+
+    .treatment-price {
+      font-weight: 700;
+      color: var(--primary-dark);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .treatment-expand {
+      padding: 0.5rem 1rem;
+      font-size: 0.82rem;
+      font-family: inherit;
+      color: var(--primary-dark);
+      background: rgba(196, 165, 116, 0.15);
+      border: 1px solid rgba(196, 165, 116, 0.25);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .treatment-expand:hover {
+      background: rgba(196, 165, 116, 0.25);
+    }
+
+    .treatment-expand.expanded {
+      background: rgba(232, 221, 204, 0.7);
+    }
+
+    .treatment-expand .arrow {
+      display: inline-block;
+      transition: transform 0.25s ease;
+    }
+
+    .treatment-expand.expanded .arrow {
+      transform: rotate(180deg);
+    }
+
+    .treatment-desc {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.65;
+      text-align: right;
+      padding: 0 1.25rem 1.1rem;
+      display: none;
+    }
+
+    .treatment-desc.show {
+      display: block;
+      animation: fadeSlide 0.3s ease;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: nowrap;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .social-link:hover {
+      transform: scale(1.12);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .social-link svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .social-link.whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .social-link.whatsapp:hover {
+      background: #20bd5a;
+    }
+
+    .social-link.instagram {
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: white;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 1.25rem 1rem; }
+      .header {
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+      .form-card {
+        padding: 1.5rem 1.25rem;
+        border-radius: 22px;
+      }
+      .brand { font-size: 2.1rem; }
+      .social-link {
+        width: 44px;
+        height: 44px;
+      }
+      .social-link svg {
+        width: 22px;
+        height: 22px;
+      }
+      .chip { padding: 0.5rem 0.85rem; font-size: 0.85rem; }
+      .treatment-main {
+        padding: 0.9rem 1rem;
+      }
+      .treatment-expand {
+        padding: 0.55rem 0.85rem;
+        font-size: 0.8rem;
+        min-height: 44px;
+      }
+      .treatment-desc {
+        font-size: 0.82rem;
+        padding: 0 1rem 0.9rem;
+        line-height: 1.55;
+      }
+      .treatment-select input {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-brand">
+        <h1 class="brand">Retaj Cosmetica</h1>
+        <p class="subtitle">علاجات بشرة متطورة · استمارة تقييم البشرة</p>
+      </div>
+      <div class="social-links">
+        <a href="https://wa.me/972527340251" class="social-link whatsapp" target="_blank" rel="noopener" aria-label="واتساب">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://instagram.com/retaj__agbaria1" class="social-link instagram" target="_blank" rel="noopener" aria-label="انستغرام">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+    </header>
+
+    <div class="form-card">
+      <div id="successMsg" class="success-msg">سيتم فتح الواتساب لإرسال الاستمارة ✓</div>
+
+      <form id="skinForm" method="POST">
+
+        <!-- المعلومات الأساسية -->
+        <section class="section">
+          <h2 class="section-title">المعلومات الأساسية</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">الاسم <span class="required">*</span></label>
+              <input type="text" id="name" name="الاسم" required placeholder="الاسم الكامل">
+            </div>
+            <div class="form-group">
+              <label for="age">العمر <span class="required">*</span></label>
+              <input type="number" id="age" name="العمر" required placeholder="مثال: 25" min="10" max="100">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">رقم التواصل <span class="required">*</span></label>
+              <input type="tel" id="phone" name="رقم_التواصل" required placeholder="05xxxxxxxx">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>سبب الزيارة <span class="required">*</span></label>
+            <div class="chip-group">
+              <label class="chip radio-chip">
+                <input type="radio" name="سبب_الزيارة" value="أول مرة" required>
+                <span class="chip-label">أول مرة</span>
+              </label>
+              <label class="chip radio-chip">
+                <input type="radio" name="سبب_الزيارة" value="متابعة">
+                <span class="chip-label">متابعة</span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- نوع البشرة -->
+        <section class="section">
+          <h2 class="section-title">نوع البشرة</h2>
+          <div class="chip-group">
+            <label class="chip">
+              <input type="checkbox" name="نوع_البشرة" value="دهنية">
+              <span class="chip-label">دهنية</span>
+            </label>
+            <label class="chip">
+              <input type="checkbox" name="نوع_البشرة" value="جافة">
+              <span class="chip-label">جافة</span>
+            </label>
+            <label class="chip">
+              <input type="checkbox" name="نوع_البشرة" value="مختلطة">
+              <span class="chip-label">مختلطة</span>
+            </label>
+            <label class="chip">
+              <input type="checkbox" name="نوع_البشرة" value="حساسة">
+              <span class="chip-label">حساسة</span>
+            </label>
+            <label class="chip">
+              <input type="checkbox" name="نوع_البشرة" value="غير متأكد">
+              <span class="chip-label">غير متأكد</span>
+            </label>
+          </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- أهم المشكلة -->
+        <section class="section">
+          <h2 class="section-title">أهم المشكلة الحالية</h2>
+          <div class="chip-group">
+            <label class="chip">
+              <input type="checkbox" name="المشكلة" value="حب شباب">
+              <span class="chip-label">حب شباب</span>
+            </label>
+            <label class="chip">
+              <input type="checkbox" name="المشكلة" value="تصبغات">
+              <span class="chip-label">تصبغات</span>
+            </label>
+            <label class="chip">
+              <input type="checkbox" name="المشكلة" value="جفاف">
+              <span class="chip-label">جفاف</span>
+            </label>
+            <label class="chip">
+              <input type="checkbox" name="المشكلة" value="تجاعيد">
+              <span class="chip-label">تجاعيد</span>
+            </label>
+            <label class="chip">
+              <input type="checkbox" name="المشكلة" value="مسام واسعة">
+              <span class="chip-label">مسام واسعة</span>
+            </label>
+            <label class="chip">
+              <input type="checkbox" name="المشكلة" value="احمرار/حساسية">
+              <span class="chip-label">احمرار/حساسية</span>
+            </label>
+          </div>
+          <div class="form-row" style="margin-top: 1rem;">
+            <div class="form-group">
+              <label for="otherProblem">أخرى</label>
+              <input type="text" id="otherProblem" name="المشكلة_أخرى" placeholder="حددي إن وجد">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="problemDuration">منذ متى المشكلة؟</label>
+            <input type="text" id="problemDuration" name="منذ_متى_المشكلة" placeholder="مثال: شهر، سنة">
+          </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- الحساسية -->
+        <section class="section">
+          <h2 class="section-title">الحساسية</h2>
+          <div class="form-group">
+            <label>هل لديكِ حساسية من منتجات/مكونات؟</label>
+            <div class="chip-group">
+              <label class="chip radio-chip">
+                <input type="radio" name="حساسية" value="نعم">
+                <span class="chip-label">نعم</span>
+              </label>
+              <label class="chip radio-chip">
+                <input type="radio" name="حساسية" value="لا">
+                <span class="chip-label">لا</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="allergyDetails">إن وجد اذكريها</label>
+            <input type="text" id="allergyDetails" name="تفاصيل_الحساسية" placeholder="المكونات أو المنتجات">
+          </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- العلاجات السابقة -->
+        <section class="section">
+          <h2 class="section-title">العلاجات والأدوية السابقة</h2>
+          <div class="form-group">
+            <label>هل تستخدمين أدوية أو خضعتِ لعلاج للبشرة مؤخراً؟</label>
+            <div class="chip-group">
+              <label class="chip radio-chip">
+                <input type="radio" name="علاجات_سابقة" value="نعم">
+                <span class="chip-label">نعم</span>
+              </label>
+              <label class="chip radio-chip">
+                <input type="radio" name="علاجات_سابقة" value="لا">
+                <span class="chip-label">لا</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="treatmentDetails">(ليزر / تقشير / روأكوتان / غيره)</label>
+            <input type="text" id="treatmentDetails" name="تفاصيل_العلاج" placeholder="اذكري التفاصيل">
+          </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- الروتين اليومي -->
+        <section class="section">
+          <h2 class="section-title">روتينك اليومي</h2>
+          <div class="chip-group">
+            <label class="chip">
+              <input type="checkbox" name="الروتين" value="غسول">
+              <span class="chip-label">غسول</span>
+            </label>
+            <label class="chip">
+              <input type="checkbox" name="الروتين" value="سيروم">
+              <span class="chip-label">سيروم</span>
+            </label>
+            <label class="chip">
+              <input type="checkbox" name="الروتين" value="مرطب">
+              <span class="chip-label">مرطب</span>
+            </label>
+            <label class="chip">
+              <input type="checkbox" name="الروتين" value="واقي شمس">
+              <span class="chip-label">واقي شمس</span>
+            </label>
+            <label class="chip">
+              <input type="checkbox" name="الروتين" value="تقشير">
+              <span class="chip-label">تقشير</span>
+            </label>
+          </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- معلومات إضافية -->
+        <section class="section">
+          <h2 class="section-title">معلومات إضافية</h2>
+          <div class="form-group">
+            <label>التعرض للشمس</label>
+            <div class="chip-group">
+              <label class="chip radio-chip">
+                <input type="radio" name="التعرض_للشمس" value="قليل">
+                <span class="chip-label">قليل</span>
+              </label>
+              <label class="chip radio-chip">
+                <input type="radio" name="التعرض_للشمس" value="متوسط">
+                <span class="chip-label">متوسط</span>
+              </label>
+              <label class="chip radio-chip">
+                <input type="radio" name="التعرض_للشمس" value="كثير">
+                <span class="chip-label">كثير</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>الحمل أو الرضاعة</label>
+            <div class="chip-group">
+              <label class="chip radio-chip">
+                <input type="radio" name="حمل_أو_رضاعة" value="نعم">
+                <span class="chip-label">نعم</span>
+              </label>
+              <label class="chip radio-chip">
+                <input type="radio" name="حمل_أو_رضاعة" value="لا">
+                <span class="chip-label">لا</span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- اختيار العلاج -->
+        <section class="section">
+          <h2 class="section-title">العلاج المطلوب</h2>
+          <p class="treatment-hint">اختاري العلاج أو العلاجات اللي بتحبّيها</p>
+          <div class="treatment-grid">
+            <div class="treatment-card" data-card>
+              <div class="treatment-main">
+                <label class="treatment-select">
+                  <input type="checkbox" name="العلاج_المطلوب" value="جلسة هايدروفيشل 300₪">
+                  <div class="treatment-info">
+                    <span class="treatment-name">جلسة هايدروفيشل</span>
+                    <span class="treatment-price">300₪</span>
+                  </div>
+                </label>
+                <button type="button" class="treatment-expand">اطلعي الشرح <span class="arrow">▼</span></button>
+              </div>
+              <p class="treatment-desc">تنظيف عميق وتقشير لطيف مع ترطيب فوري. يجمع بين شفط الشوائب والرؤوس السوداء وتغذية البشرة بسيرومات غنية. مناسب لجميع أنواع البشرة، يعطي نتائج نضارة من الجلسة الأولى.</p>
+            </div>
+            <div class="treatment-card" data-card>
+              <div class="treatment-main">
+                <label class="treatment-select">
+                  <input type="checkbox" name="العلاج_المطلوب" value="جلسة ميزوثيرابي 350₪">
+                  <div class="treatment-info">
+                    <span class="treatment-name">جلسة ميزوثيرابي</span>
+                    <span class="treatment-price">350₪</span>
+                  </div>
+                </label>
+                <button type="button" class="treatment-expand">اطلعي الشرح <span class="arrow">▼</span></button>
+              </div>
+              <p class="treatment-desc">حقن فيتامينات ومعادن ومغذيات مباشرة للطبقة الوسطى من الجلد. يحفز إنتاج الكولاجين، يقلل التجاعيد والتصبغات، ويمنح البشرة مرونة وإشراقاً. آمن وغير مؤلم.</p>
+            </div>
+            <div class="treatment-card" data-card>
+              <div class="treatment-main">
+                <label class="treatment-select">
+                  <input type="checkbox" name="العلاج_المطلوب" value="جلسة تنظيف عميق + جهاز فوتوثيرابي 250₪">
+                  <div class="treatment-info">
+                    <span class="treatment-name">تنظيف عميق + فوتوثيرابي</span>
+                    <span class="treatment-price">250₪</span>
+                  </div>
+                </label>
+                <button type="button" class="treatment-expand">اطلعي الشرح <span class="arrow">▼</span></button>
+              </div>
+              <p class="treatment-desc">تنظيف شامل للبشرة يليه جلسة ضوء LED لتحفيز إصلاح الخلايا. الضوء الأزرق يقضي على حب الشباب، والأحمر يحفز الكولاجين ويقلل التجاعيد. يساعد في توحيد لون البشرة وتهدئة الالتهابات.</p>
+            </div>
+            <div class="treatment-card" data-card>
+              <div class="treatment-main">
+                <label class="treatment-select">
+                  <input type="checkbox" name="العلاج_المطلوب" value="جلسة نضارة وترطيب 280₪">
+                  <div class="treatment-info">
+                    <span class="treatment-name">جلسة نضارة وترطيب</span>
+                    <span class="treatment-price">280₪</span>
+                  </div>
+                </label>
+                <button type="button" class="treatment-expand">اطلعي الشرح <span class="arrow">▼</span></button>
+              </div>
+              <p class="treatment-desc">ترطيب عميق وتغذية مكثفة للبشرة الجافة أو الباهتة. تركز على إعادة النضارة والتوهج الطبيعي مع تغذية الخلايا وحمايتها. مثالي لبشرة تفتقد الحيوية أو تعاني من الجفاف.</p>
+            </div>
+            <div class="treatment-card" data-card>
+              <div class="treatment-main">
+                <label class="treatment-select">
+                  <input type="checkbox" name="العلاج_المطلوب" value="التقشير الاخضر 500₪">
+                  <div class="treatment-info">
+                    <span class="treatment-name">التقشير الاخضر</span>
+                    <span class="treatment-price">500₪</span>
+                  </div>
+                </label>
+                <button type="button" class="treatment-expand">اطلعي الشرح <span class="arrow">▼</span></button>
+              </div>
+              <p class="treatment-desc">تقشير بالأعشاب الطبيعية غني بالفيتامينات والمعادن. يقلل الندوب والتصبغات، يصغّر المسام، ويحفز إنتاج الكولاجين. يعطي بشرة جديدة في أيام قليلة. آمن ومناسب لمعظم أنواع البشرة.</p>
+            </div>
+            <div class="treatment-card" data-card>
+              <div class="treatment-main">
+                <label class="treatment-select">
+                  <input type="checkbox" name="العلاج_المطلوب" value="التقشير البارد 300₪">
+                  <div class="treatment-info">
+                    <span class="treatment-name">التقشير البارد</span>
+                    <span class="treatment-price">300₪</span>
+                  </div>
+                </label>
+                <button type="button" class="treatment-expand">اطلعي الشرح <span class="arrow">▼</span></button>
+              </div>
+              <p class="treatment-desc">تقشير لطيف بدرجات حرارة منخفضة يناسب البشرة الحساسة. يعطي نضارة وتوهج بدون تهيج أو احمرار. مثالي للبشرة التي تحتاج تجديد لطيف مع راحة فورية.</p>
+            </div>
+            <div class="treatment-card" data-card>
+              <div class="treatment-main">
+                <label class="treatment-select">
+                  <input type="checkbox" name="العلاج_المطلوب" value="تقشير الطحالب 400₪">
+                  <div class="treatment-info">
+                    <span class="treatment-name">تقشير الطحالب</span>
+                    <span class="treatment-price">400₪</span>
+                  </div>
+                </label>
+                <button type="button" class="treatment-expand">اطلعي الشرح <span class="arrow">▼</span></button>
+              </div>
+              <p class="treatment-desc">تقشير مستخلص من الطحالب البحرية الغنية بالمعادن. يرطّب بعمق، ينظّف المسام، ويعيد النضارة للبشرة. يعالج الجفاف والبهتان ويعطي إشراقاً طبيعياً.</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- الهدف والتوقيع -->
+        <section class="section">
+          <h2 class="section-title">الهدف والتوقيع</h2>
+          <div class="form-group">
+            <label for="goal">هدفك من العلاج</label>
+            <textarea id="goal" name="هدف_العلاج" placeholder="ماذا تتمنين تحقيقه من العلاج؟"></textarea>
+          </div>
+          <div class="signature-row">
+            <div class="signature-group">
+              <label for="signature">توقيع الزبونة</label>
+              <input type="text" id="signature" name="التوقيع" placeholder="الاسم أو التوقيع">
+            </div>
+            <div class="signature-group">
+              <label for="date">التاريخ</label>
+              <input type="text" id="date" name="التاريخ" placeholder="سيُعبأ تلقائياً">
+            </div>
+          </div>
+        </section>
+
+        <button type="submit" class="btn-submit">إرسال الاستمارة على الواتساب</button>
+      </form>
+    </div>
+
+    <p class="footer">Retaj Cosmetica</p>
+  </div>
+
+  <script>
+    // تعبئة التاريخ تلقائياً عند التحميل وعند التركيز
+    const dateInput = document.getElementById('date');
+    function setDate() {
+      if (!dateInput.value) {
+        const today = new Date();
+        dateInput.value = today.toLocaleDateString('ar-EG');
+      }
+    }
+    setDate();
+    dateInput.addEventListener('focus', setDate);
+
+    // زر اطلعي الشرح - يفتح ويقفل الشرح
+    document.querySelectorAll('.treatment-expand').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const card = this.closest('.treatment-card');
+        const desc = card.querySelector('.treatment-desc');
+        desc.classList.toggle('show');
+        this.classList.toggle('expanded');
+      });
+    });
+
+    // تحديث مظهر البطاقة عند اختيار العلاج
+    document.querySelectorAll('.treatment-card input[type="checkbox"]').forEach(cb => {
+      cb.addEventListener('change', function() {
+        this.closest('.treatment-card').classList.toggle('selected', this.checked);
+      });
+    });
+
+    const form = document.getElementById('skinForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const skinType = formData.getAll('نوع_البشرة').join('، ') || '-';
+      const problems = formData.getAll('المشكلة').join('، ') || '-';
+      const routine = formData.getAll('الروتين').join('، ') || '-';
+      const selectedTreatment = formData.getAll('العلاج_المطلوب').join(' | ') || '-';
+
+      const msg = `*استمارة تقييم البشرة - Retaj Cosmetica* 🌿
+────────────────
+*المعلومات:*
+الاسم: ${formData.get('الاسم') || '-'}
+العمر: ${formData.get('العمر') || '-'}
+رقم التواصل: ${formData.get('رقم_التواصل') || '-'}
+سبب الزيارة: ${formData.get('سبب_الزيارة') || '-'}
+────────────────
+*العلاج المطلوب:* ${selectedTreatment}
+────────────────
+*نوع البشرة:* ${skinType}
+────────────────
+*المشكلة الحالية:* ${problems}
+أخرى: ${formData.get('المشكلة_أخرى') || '-'}
+منذ متى: ${formData.get('منذ_متى_المشكلة') || '-'}
+────────────────
+*الحساسية:* ${formData.get('حساسية') || '-'}
+تفاصيل: ${formData.get('تفاصيل_الحساسية') || '-'}
+────────────────
+*علاجات سابقة:* ${formData.get('علاجات_سابقة') || '-'}
+${formData.get('تفاصيل_العلاج') ? 'تفاصيل: ' + formData.get('تفاصيل_العلاج') : ''}
+────────────────
+*الروتين:* ${routine}
+*التعرض للشمس:* ${formData.get('التعرض_للشمس') || '-'}
+*حمل/رضاعة:* ${formData.get('حمل_أو_رضاعة') || '-'}
+────────────────
+*الهدف:* ${formData.get('هدف_العلاج') || '-'}
+التوقيع: ${formData.get('التوقيع') || '-'}
+التاريخ: ${formData.get('التاريخ') || '-'}`;
+
+      const url = 'https://wa.me/972527340251?text=' + encodeURIComponent(msg);
+      window.open(url, '_blank');
+
+      successMsg.classList.add('show');
+      form.reset();
+      setDate();
+      successMsg.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
